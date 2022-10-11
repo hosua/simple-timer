@@ -18,12 +18,12 @@ public:
 		dur_hr = hr;
 		dur_min = min;
 		dur_s = sec;
-		if (sec > 60){
+		if (dur_s >= 60){
 			dur_min +=  sec / 60;
 			dur_s = sec % 60;
 		}
 
-		if (dur_min > 60){
+		if (dur_min >= 60){
 			dur_hr += dur_min / 60;
 			dur_min = dur_min % 60;
 		}
