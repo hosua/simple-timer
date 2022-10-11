@@ -87,6 +87,10 @@ bool isint(string str){
 int main(int argc, char** argv){
 	int opt;
 	int h = 0, m = 0, s = 0;
+	if (argc == 1){
+		usage();
+		exit(EXIT_FAILURE);
+	}
 	while ((opt = getopt(argc, argv, ":h:m:s:")) != -1){
 		switch(opt){
 			case 'h':
