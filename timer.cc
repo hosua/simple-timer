@@ -29,6 +29,7 @@ public:
 	}
 
 	void printTime(){
+		cout << "Time remaining: ";
 		cout << setw(2) << setfill('0') << dur_hr << ":" << 
 				setw(2) << setfill('0') << dur_min << ":" <<
 				setw(2) << setfill('0') << dur_s;
@@ -42,7 +43,6 @@ public:
 		}
 
 		while (dur_s || dur_min || dur_hr){
-			cout << "Time remaining: ";
 			printTime();
 			if (dur_s == 0){
 				if (dur_min == 0){
@@ -61,14 +61,12 @@ public:
 			cout << '\r';
 			dur_s--;
 		}
-		cout << "Time remaining: ";
 		printTime();
 		this_thread::sleep_for(chrono::seconds(1));
 		cout << flush;
 		cout << "\33[2K"; // https://stackoverflow.com/questions/1508490/erase-the-current-printed-console-line
 		cout << '\r';
 		// dur_s--;
-		cout << "Time remaining: ";
 		printTime();
 		cout << endl;
 		cout << "Times up!\n";
