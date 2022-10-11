@@ -21,10 +21,11 @@ public:
 		if (sec > 60){
 			dur_min +=  sec / 60;
 			dur_s = sec % 60;
-			if (dur_min > 60){
-				dur_hr += dur_min / 60;
-				dur_min = dur_hr % 60;
-			}
+		}
+
+		if (dur_min > 60){
+			dur_hr += dur_min / 60;
+			dur_min = dur_min % 60;
 		}
 	}
 
